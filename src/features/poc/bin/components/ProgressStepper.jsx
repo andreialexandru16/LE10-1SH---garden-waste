@@ -1,51 +1,21 @@
+// src/features/poc/bin/components/ProgressStepper.jsx
 import React from "react";
 
-const steps = [
-    "Permit Check",
-    "Waste Type",
-    "Select Skip",
-    "Choose Date",
-    "Payment",
-];
-
-const ProgressStepper = ({ currentStep = 2 }) => {
-    // currentStep este index-ul pasului curent (0-based)
-    // Ex: 0 = Permit Check, 1 = Waste Type, etc.
-
+const ProgressStepper = ({ currentStep = 0, steps = [] }) => {
     return (
-        <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "1rem" }}>
+        <ul className="nav nav-pills justify-content-center my-4">
             {steps.map((step, index) => {
                 const isActive = index <= currentStep;
                 return (
-                    <div
-                        key={step}
-                        style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            color: isActive ? "#1D4ED8" : "#999",
-                        }}
-                    >
-                        <div
-                            style={{
-                                width: "30px",
-                                height: "30px",
-                                borderRadius: "50%",
-                                backgroundColor: isActive ? "#1D4ED8" : "#333",
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                color: "#fff",
-                                marginBottom: "0.5rem",
-                            }}
-                        >
-                            {index + 1}
-                        </div>
-                        <div style={{ fontSize: "0.8rem" }}>{step}</div>
-                    </div>
+                    <li className="nav-item mx-2" key={step}>
+            <span className={`nav-link ${isActive ? "active" : ""}`}>
+              <span className="badge bg-secondary me-1">{index + 1}</span>
+                {step}
+            </span>
+                    </li>
                 );
             })}
-        </div>
+        </ul>
     );
 };
 

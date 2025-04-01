@@ -1,37 +1,23 @@
+// src/features/poc/bin/components/SelectorCard.jsx
+
 import React from "react";
 
 const SelectorCard = ({ skip, isSelected, onSelect }) => {
-    const cardStyles = {
-        border: isSelected ? "2px solid #1D4ED8" : "1px solid #333",
-        backgroundColor: "#1f1f1f",
-        color: "#fff",
-        borderRadius: "8px",
-        padding: "1rem",
-        margin: "0.5rem",
-        flex: "1",
-        textAlign: "center",
-        cursor: "pointer",
-    };
-
-    const buttonStyles = {
-        backgroundColor: isSelected ? "#1D4ED8" : "#333",
-        color: "#fff",
-        border: "none",
-        padding: "0.5rem 1rem",
-        borderRadius: "4px",
-        marginTop: "1rem",
-        cursor: "pointer",
-    };
-
     return (
-        <div style={cardStyles} onClick={() => onSelect(skip.id)}>
-            <h3 style={{ marginBottom: "0.5rem" }}>{skip.title}</h3>
-            <p style={{ margin: "0.5rem 0" }}>{skip.price}</p>
-            <p style={{ margin: "0.5rem 0" }}>{skip.capacity}</p>
-            <p style={{ fontSize: "0.9rem", color: "#aaa" }}>{skip.description}</p>
-            <button style={buttonStyles}>
-                {isSelected ? "Selected" : "Select This Skip"}
-            </button>
+        <div
+            className={`card h-100 ${isSelected ? "border-primary shadow" : "border-secondary"}`}
+            style={{ cursor: "pointer" }}
+            onClick={() => onSelect(skip.id)}
+        >
+            <div className="card-body d-flex flex-column">
+                <h5 className="card-title">{skip.title}</h5>
+                <h6 className="card-subtitle mb-2 text-muted">{skip.capacity}</h6>
+                <p className="card-text flex-grow-1">{skip.description}</p>
+                <p className="card-text fw-bold">{skip.price}</p>
+                <button className={`btn ${isSelected ? "btn-primary" : "btn-outline-primary"}`}>
+                    {isSelected ? "Selected" : "Select This Skip"}
+                </button>
+            </div>
         </div>
     );
 };

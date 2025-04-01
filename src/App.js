@@ -1,30 +1,33 @@
 import React, { useState } from "react";
-import ProgressStepper from "./features/components/ProgressStepper";
-import Selector from "./features/components/Selector";
+import ProgressStepper from "./features/poc/bin/components/ProgressStepper";
+import Selector from "./features/poc/bin/components/Selector";
 
 function App() {
-    // Exemplu de gestionare a pasului curent
+    // Definim pașii aici
+    const steps = ["Permit Check", "Waste Type", "Select Skip", "Choose Date", "Payment"];
+
+    // Starea pentru pasul curent
     const [currentStep, setCurrentStep] = useState(2);
 
     return (
         <div>
-            {/* Bara de progres */}
-            <ProgressStepper currentStep={currentStep} />
+            {/* Bara de progres primește steps și currentStep ca prop */}
+            <ProgressStepper steps={steps} currentStep={currentStep} />
 
-            {/* Conținutul principal, de exemplu Selector-ul */}
+            {/* Selectorul pentru skip-uri */}
             <Selector />
 
-            {/* Butoane de navigare (exemplu simplu) */}
-            <div style={{ display: "flex", justifyContent: "space-between", padding: "1rem" }}>
+            {/* Butoane de navigare */}
+            <div className="container d-flex justify-content-between py-4">
                 <button
                     onClick={() => setCurrentStep((prev) => Math.max(prev - 1, 0))}
-                    style={{ backgroundColor: "#333", color: "#fff", border: "none", padding: "0.5rem 1rem" }}
+                    className="btn btn-secondary"
                 >
                     Back
                 </button>
                 <button
-                    onClick={() => setCurrentStep((prev) => Math.min(prev + 1, 4))}
-                    style={{ backgroundColor: "#1D4ED8", color: "#fff", border: "none", padding: "0.5rem 1rem" }}
+                    onClick={() => setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1))}
+                    className="btn btn-primary"
                 >
                     Continue
                 </button>
