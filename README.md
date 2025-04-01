@@ -1,8 +1,6 @@
 # LE10-1SH---garden-waste
 
 
-# WeWantWaste Skip Selection Redesign
-
 ## Overview
 
 This repository demonstrates a comprehensive redesign of the skip selection interface for WeWantWaste.co.uk, focusing on architectural robustness, scalability, and UX excellence while maintaining complete functional parity with the original implementation.
