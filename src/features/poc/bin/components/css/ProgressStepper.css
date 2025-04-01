@@ -1,0 +1,55 @@
+/* src/features/poc/bin/components/ProgressStepper.css */
+.progress-stepper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    flex-wrap: wrap; /* pentru a nu se suprapune pe ecrane mici */
+}
+
+.progress-step-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+.progress-step {
+    background-color: #333;
+    color: #999;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.progress-step.active {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.step-label {
+    margin: 0;
+}
+
+.step-line {
+    width: 40px;
+    height: 2px;
+    background-color: #333;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.step-line.active {
+    background-color: #0d6efd;
+}
+
+@media (max-width: 576px) {
+    .progress-step {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    .step-line {
+        width: 20px;
+    }
+}
