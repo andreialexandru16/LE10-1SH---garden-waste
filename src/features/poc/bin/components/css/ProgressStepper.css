@@ -1,0 +1,53 @@
+/* src/features/poc/bin/components/ProgressStepper.css */
+
+/* Container general pentru stepper */
+.stepper-container {
+    margin-top: 1rem;
+}
+
+/* Wrapper pentru fiecare pas (cercul + eticheta) */
+.step-wrapper {
+    position: relative;
+    text-align: center;
+    margin: 0 0.5rem;
+}
+
+/* Cercul numerotat */
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #6c757d; /* Gri bootstrap */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+/* Cercul activ (pas curent sau finalizat) */
+.step-circle.active {
+    background-color: #0d6efd; /* Albastru bootstrap */
+}
+
+/* Eticheta de sub cerc */
+.step-label {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* Linia dintre pași */
+.step-line {
+    flex: 1;           /* se întinde între pași */
+    height: 2px;
+    background-color: #6c757d;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Linia activă */
+.step-line.active {
+    background-color: #0d6efd;
+}

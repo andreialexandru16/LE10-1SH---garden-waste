@@ -1,20 +1,22 @@
+// src/App.js
+
 import React, { useState } from "react";
 import ProgressStepper from "./features/poc/bin/components/ProgressStepper";
 import Selector from "./features/poc/bin/components/Selector";
 
 function App() {
-    // Definim pașii aici
+    // Lista pașilor
     const steps = ["Permit Check", "Waste Type", "Select Skip", "Choose Date", "Payment"];
 
-    // Starea pentru pasul curent
+    // Indexul pasului curent
     const [currentStep, setCurrentStep] = useState(2);
 
     return (
         <div>
-            {/* Bara de progres primește steps și currentStep ca prop */}
+            {/* Stepper-ul cu buline și linii */}
             <ProgressStepper steps={steps} currentStep={currentStep} />
 
-            {/* Selectorul pentru skip-uri */}
+            {/* Conținutul paginii (Selector etc.) */}
             <Selector />
 
             {/* Butoane de navigare */}
