@@ -4,9 +4,8 @@ import "./css/SelectorCard.css";
 
 const SelectorCard = ({ skip, isSelected, onSelect }) => {
     const handleClick = () => {
-        if (!skip.disabled) {
-            onSelect(skip.id);
-        }
+        if (skip.disabled) return;
+        onSelect(skip.id);
     };
 
     return (
@@ -16,11 +15,10 @@ const SelectorCard = ({ skip, isSelected, onSelect }) => {
             }`}
             onClick={handleClick}
         >
-            <div
-                className="card-image"
-                style={{ backgroundImage: `url(${skip.imageUrl})` }}
-            ></div>
-            <div className="card-overlay">
+            <div className="card-image-wrapper">
+                <img src={skip.imageUrl} alt={skip.title} className="card-image" />
+            </div>
+            <div className="card-content">
                 <div className="card-header">
                     <h3 className="card-title">{skip.title}</h3>
                     <span className="card-capacity">{skip.size} yards</span>
