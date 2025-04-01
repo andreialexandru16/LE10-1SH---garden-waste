@@ -1,0 +1,1 @@
+# LE10-1SH---garden-waste
