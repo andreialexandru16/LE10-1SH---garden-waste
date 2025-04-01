@@ -1,63 +1,70 @@
-# LE10-1SH---garden-waste
+# Getting Started with Create React App
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Overview
+## Available Scripts
 
-This repository demonstrates a comprehensive redesign of the skip selection interface for WeWantWaste.co.uk, focusing on architectural robustness, scalability, and UX excellence while maintaining complete functional parity with the original implementation.
+In the project directory, you can run:
 
-## Architectural Approach
+### `npm start`
 
-The implementation follows a component-based architecture with clear separation of concerns:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- **Domain Layer**: Encapsulates business logic and data transformations
-- **Presentation Layer**: Handles rendering and user interactions
-- **Service Layer**: Manages API interactions and data fetching
-- **State Management**: Utilizes React's Context API with reducers for predictable state changes
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## Technical Stack Selection Rationale
+### `npm test`
 
-### Core Technologies
-- **React 18**: Leveraging the latest performance improvements and concurrent rendering
-- **TypeScript**: For type safety and improved developer experience
-- **Tailwind CSS**: For rapid UI development without CSS bloat
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Performance Optimizations
-- Lazy loading of components
-- Memoization of expensive calculations
-- Virtualized lists for handling large datasets efficiently
-- Asset optimization for improved loading times
+### `npm run build`
 
-### Accessibility Considerations
-- WCAG 2.1 AA compliance
-- Keyboard navigability
-- Screen reader compatibility
-- Semantic HTML structure
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Implementation Details
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Component Architecture
-The system is built with reusable, composable components following the Atomic Design methodology:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- **Atoms**: Button, Card, Input, Icon
-- **Molecules**: SkipOption, NavigationButton, PricingDisplay
-- **Organisms**: SkipSelectionGrid, ProgressTracker
-- **Templates**: PageLayout
-- **Pages**: SkipSelectionPage
+### `npm run eject`
 
-### State Management
-The implementation uses a custom state management solution that combines React Context with reducers for a unidirectional data flow:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-```typescript
-interface SkipSelectionState {
-  skips: Skip[];
-  selectedSkipId: number | null;
-  isLoading: boolean;
-  error: string | null;
-}
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-type Action = 
-  | { type: 'FETCH_SKIPS_INIT' }
-  | { type: 'FETCH_SKIPS_SUCCESS', payload: Skip[] }
-  | { type: 'FETCH_SKIPS_ERROR', payload: string }
-  | { type: 'SELECT_SKIP', payload: number }
-  | { type: 'RESET_SELECTION' };
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
