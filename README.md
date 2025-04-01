@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# LE10-15H—Garden Waste
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based application for selecting and managing skip sizes in a multi-step wizard. This project demonstrates a clean folder structure, modular components, and a responsive UI, making it easy to maintain and extend.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
+1. Overview
+2. Features
+3. Folder Structure
+4. Installation
+5. Usage
+6. Scripts
+7. Contributing
+8. License
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
+The LE10-15H—Garden Waste project is a React application that guides users through a multi-step process (wizard) to select the appropriate skip size for waste disposal. It includes a progress stepper, skip selection cards, and a responsive design suitable for both desktop and mobile.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
+- Multi-step Wizard: A stepper (ProgressStepper.jsx) that indicates current and upcoming steps (e.g., Postcode, Waste Type, Select Skip, etc.).
+- Skip Selection: Cards (SelectorCard.jsx) displaying skip sizes, prices, images, and selection status.
+- Responsive Layout: Works seamlessly on desktop and mobile devices.
+- Configurable Data: The skip information is stored in a single config file (skip-config.jsx) for easy updates.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Folder Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+LE10-15H---garden-waste
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── ...
+├── src
+│   ├── features
+│   │   ├── poc
+│   │   │   ├── bin
+│   │   │   │   └── components
+│   │   │   │       ├── css
+│   │   │   │       ├── ProgressStepper.jsx
+│   │   │   │       ├── Selector.jsx
+│   │   │   │       ├── SelectorCard.jsx
+│   │   │   │       └── skip-config.jsx
+│   │   ├── hooks
+│   │   ├── service
+│   │   └── ...
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.js
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+├── package.json
+├── package-lock.json
+└── README.md
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- public/  
+  Contains the base index.html file and other static assets (e.g., favicon.ico).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- src/  
+  The main source folder for all React components and logic.
 
-### `npm run eject`
+  - features/  
+    A grouping for domain-specific or feature-specific folders.
+    - poc/bin/components/  
+      - css/: Stylesheets or CSS modules for these components.
+      - ProgressStepper.jsx: A stepper component indicating current step in the wizard.
+      - Selector.jsx: Main container that maps through skip data and renders SelectorCard components.
+      - SelectorCard.jsx: Displays individual skip details (image, price, size).
+      - skip-config.jsx: Holds the skip data array (ID, size, price, etc.) and any transformations needed (e.g., generating image URLs).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  - App.js: The root component where the stepper and skip selector are combined.
+  - index.js: Application entry point, rendering <App /> into the DOM.
+  - App.test.js / setupTests.js: Example test files (using Jest & React Testing Library).
+  - reportWebVitals.js: Performance measuring utility (optional).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repository (or download the ZIP) from GitHub:
+   git clone https://github.com/username/LE10-15H-garden-waste.git
 
-## Learn More
+2. Navigate into the project folder:
+   cd LE10-15H-garden-waste
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Install dependencies:
+   npm install
+   or
+   yarn
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Start the development server:
+   npm start
+   This launches the app on http://localhost:3000
 
-### Analyzing the Bundle Size
+2. Open the application in your browser to interact with the multi-step wizard and choose skip sizes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Make changes to the source code in src/ and the app will hot-reload automatically.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Scripts
 
-### Advanced Configuration
+Inside package.json, the following scripts are commonly used:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- npm start  
+  Runs the app in development mode on http://localhost:3000.
 
-### Deployment
+- npm test  
+  Launches the test runner in interactive watch mode.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- npm run build  
+  Builds the app for production into the build folder.
 
-### `npm run build` fails to minify
+- npm run eject  
+  Exposes the configuration files (not typically recommended unless necessary).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch for your feature: git checkout -b feature/awesome-improvement.
+3. Commit your changes: git commit -m 'Add awesome improvement'.
+4. Push to the branch: git push origin feature/awesome-improvement.
+5. Open a Pull Request on GitHub.
+
+---
+
+## License
+
+This project is licensed under the MIT License (https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute as per the license terms. If you have any questions or want to contribute, please open an issue or pull request.
+
+---
+
+Contact: For questions or suggestions, feel free to reach out via GitHub Issues (https://github.com/username/LE10-15H-garden-waste/issues) or email.
