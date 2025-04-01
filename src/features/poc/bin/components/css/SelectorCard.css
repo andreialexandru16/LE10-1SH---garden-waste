@@ -1,0 +1,78 @@
+/* src/features/components/SelectorCard.css */
+
+.skip-card {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Ajustează după preferințe */
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.skip-card:hover {
+    transform: scale(1.02);
+}
+
+.skip-card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(0.5);
+}
+
+.skip-card-overlay {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.skip-card-top-left {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.skip-card-top-right {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.skip-card-bottom-left {
+    margin-top: auto;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.skip-card-button {
+    margin-top: 0.5rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.skip-card-button.selected {
+    background-color: #1d4ed8;
+}
+
+.skip-card.selected {
+    border: 2px solid #1d4ed8;
+}

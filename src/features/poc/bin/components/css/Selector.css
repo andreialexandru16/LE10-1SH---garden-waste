@@ -1,0 +1,21 @@
+/* src/features/components/Selector.css */
+
+.selector-container {
+    background-color: #121212;
+    min-height: 100vh;
+    color: #fff;
+    padding: 2rem 1rem;
+}
+
+.selector-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.selector-subtitle {
+    font-size: 1rem;
+    color: #aaa;
+    text-align: center;
+    margin-top: 0.5rem;
+}

@@ -1,35 +1,38 @@
-// src/features/poc/bin/components/ProgressStepper.jsx
-
 import React from "react";
-import "./css/ProgressStepper.css"; // importă fișierul CSS dedicat
+import {
+    FaRegIdBadge,
+    FaRecycle,
+    FaTruck,
+    FaCalendarAlt,
+    FaCreditCard,
+} from "react-icons/fa";
+import "./css/ProgressStepper.css";
 
-/**
- * @param {number} currentStep - Indexul pasului curent (0-based)
- * @param {string[]} steps - Lista etichetelor pentru pași
- */
-const ProgressStepper = ({ currentStep = 0, steps = [] }) => {
+const defaultSteps = [
+    { label: "Permit Check", icon: <FaRegIdBadge /> },
+    { label: "Waste Type", icon: <FaRecycle /> },
+    { label: "Select Skip", icon: <FaTruck /> },
+    { label: "Choose Date", icon: <FaCalendarAlt /> },
+    { label: "Payment", icon: <FaCreditCard /> },
+];
+
+const ProgressStepper = ({ currentStep = 0, steps = defaultSteps }) => {
     return (
-        <div className="d-flex justify-content-center align-items-center stepper-container">
-            {steps.map((step, index) => (
-                <React.Fragment key={step}>
-                    {/* Fiecare pas */}
-                    <div className="step-wrapper d-flex flex-column align-items-center">
-                        <div
-                            className={`step-circle ${index <= currentStep ? "active" : ""}`}
-                        >
-                            {index + 1}
+        <div className="progress-stepper">
+            {steps.map((step, index) => {
+                const isActive = index <= currentStep;
+                return (
+                    <div className="step-container" key={step.label}>
+                        <div className={`step ${isActive ? "active" : ""}`}>
+                            <div className="step-icon">{step.icon}</div>
+                            <div className="step-label">{step.label}</div>
                         </div>
-                        <span className="step-label">{step}</span>
+                        {index < steps.length - 1 && (
+                            <div className={`connector ${index < currentStep ? "active" : ""}`} />
+                        )}
                     </div>
-
-                    {/* Linia dintre pași (nu se afișează la ultimul pas) */}
-                    {index < steps.length - 1 && (
-                        <div
-                            className={`step-line ${index < currentStep ? "active" : ""}`}
-                        ></div>
-                    )}
-                </React.Fragment>
-            ))}
+                );
+            })}
         </div>
     );
 };

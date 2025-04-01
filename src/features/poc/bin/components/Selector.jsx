@@ -1,8 +1,8 @@
-// src/features/poc/bin/components/Selector.jsx
-
+// src/features/components/Selector.jsx
 import React, { useState } from "react";
 import skipData from "./skip-config";
 import SelectorCard from "./SelectorCard";
+import "./css/Selector.css";
 
 const Selector = () => {
     const [selectedSkipId, setSelectedSkipId] = useState(null);
@@ -12,9 +12,10 @@ const Selector = () => {
     };
 
     return (
-        <div className="container py-5" style={{ backgroundColor: "#121212", minHeight: "100vh" }}>
-            <h2 className="text-center text-white mb-4">Choose Your Skip Size</h2>
-            <div className="row">
+        <div className="selector-container container">
+            <h2 className="selector-title">Choose Your Skip Size</h2>
+            <p className="selector-subtitle">Select the skip size that best suits your needs</p>
+            <div className="row mt-4">
                 {skipData.map((skip) => (
                     <div className="col-md-4 mb-4" key={skip.id}>
                         <SelectorCard
