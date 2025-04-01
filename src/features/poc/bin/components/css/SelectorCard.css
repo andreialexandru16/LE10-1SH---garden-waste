@@ -1,3 +1,4 @@
+/* src/features/components/SelectorCard.css */
 .selector-card {
     position: relative;
     border-radius: 12px;
@@ -7,10 +8,12 @@
     background-color: #1f1f1f;
     border: 1px solid #333;
 }
+
 .selector-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 .card-image {
     width: 100%;
     height: 180px;
@@ -18,6 +21,7 @@
     background-size: cover;
     filter: brightness(0.65);
 }
+
 .card-overlay {
     position: absolute;
     bottom: 0;
@@ -30,31 +34,37 @@
     height: 100%;
     justify-content: space-between;
 }
+
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .card-title {
     margin: 0;
     font-size: 1.1rem;
     font-weight: 600;
 }
+
 .card-capacity {
     background: rgba(255, 255, 255, 0.2);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: 0.8rem;
 }
+
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .card-price {
     font-size: 1rem;
     font-weight: 500;
 }
+
 .select-button {
     background: #0d6efd;
     border: none;
@@ -65,12 +75,34 @@
     cursor: pointer;
     transition: background 0.3s;
 }
+
 .select-button:hover {
     background: #0b5ed7;
 }
+
 .selector-card.selected {
     border: 2px solid #1d4ed8;
 }
+
+/* Marcăm cardurile disabled */
+.selector-card.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    border-color: #555;
+}
+
+.selector-card.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.selector-card.disabled .select-button {
+    background: #555;
+    cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
     .card-image {
         height: 140px;
