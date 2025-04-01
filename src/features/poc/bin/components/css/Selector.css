@@ -1,21 +1,23 @@
-/* src/features/components/Selector.css */
-
 .selector-container {
-    background-color: #121212;
-    min-height: 100vh;
-    color: #fff;
     padding: 2rem 1rem;
+    background-color: #121212;
+    color: #fff;
+    min-height: 100vh;
 }
-
 .selector-title {
-    font-size: 1.8rem;
-    font-weight: 700;
     text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
-
 .selector-subtitle {
+    text-align: center;
     font-size: 1rem;
     color: #aaa;
-    text-align: center;
-    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+.selector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
 }

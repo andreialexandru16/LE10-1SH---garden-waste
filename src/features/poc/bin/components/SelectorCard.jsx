@@ -1,34 +1,27 @@
-// src/features/components/SelectorCard.jsx
 import React from "react";
 import "./css/SelectorCard.css";
 
 const SelectorCard = ({ skip, isSelected, onSelect }) => {
-    const handleClick = () => {
-        onSelect(skip.id);
-    };
-
     return (
         <div
-            className={`skip-card ${isSelected ? "selected" : ""}`}
-            onClick={handleClick}
+            className={`selector-card ${isSelected ? "selected" : ""}`}
+            onClick={() => onSelect(skip.id)}
         >
             <div
-                className="skip-card-background"
+                className="card-image"
                 style={{ backgroundImage: `url(${skip.imageUrl})` }}
-            />
-            <div className="skip-card-overlay">
-                <div className="skip-card-top-left">{skip.title}</div>
-                <div className="skip-card-top-right">{skip.capacity}</div>
-                <div className="skip-card-bottom-left">{skip.price}</div>
-                <button
-                    className={`skip-card-button ${isSelected ? "selected" : ""}`}
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        handleClick();
-                    }}
-                >
-                    {isSelected ? "Selected" : "Select This Skip"}
-                </button>
+            ></div>
+            <div className="card-overlay">
+                <div className="card-header">
+                    <h3 className="card-title">{skip.title}</h3>
+                    <span className="card-capacity">{skip.size} yards</span>
+                </div>
+                <div className="card-footer">
+                    <span className="card-price">{skip.displayPrice}</span>
+                    <button className="select-button">
+                        {isSelected ? "Selected" : "Select This Skip"}
+                    </button>
+                </div>
             </div>
         </div>
     );
